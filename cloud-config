@@ -3,3 +3,18 @@
 # include one or more SSH public keys
 ssh_authorized_keys:
   - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDaCVjq2L9h92YxTpyMDolJMEthtUUkqxpPt+EzRw1cZDMIDrHbyG5GGa0bvlHyVbFNAuWZReky9hZJUcmeRENZO7Jhdppa16WysQ3dlAZav/0+NMqFBHg5pIf2TiJzxNSUX1O0EyTwYMQ8FS88feXFBEqeZBkZRNXTk4FuwtgNbjqNCPbyZdWvB63YVuBQ2y9btpYlOAxr0a9CfzfyUlJkijQq4+KEmOBA+D4QUjPVGw3Q8ls8DXL7ftQyZfRcfAddubKwSd0Uyzn0uWt6JChsrBE5vi0Le9tHwguseLiDOd10ZWrSoPlprHQoBqriXl1jBQtTng/TDlNcvj4zPiWB giovibal@iMac-di-Ester.local
+
+coreos:
+  etcd2:
+    # generate a new token for each unique cluster from https://discovery.etcd.io/new?size=3
+    # size=3
+    #discovery: "https://discovery.etcd.io/cc241f89a2c8be24692c76e6ec96adcb"
+    # size=1
+    discovery: "https://discovery.etcd.io/c0c20032c790ef79601e2c8b7eb9ad50"
+    # multi-region and multi-cloud deployments need to use $public_ipv4
+    advertise-client-urls: "http://$public_ipv4:2379"
+    initial-advertise-peer-urls: "http://$private_ipv4:2380"
+    # listen on both the official ports and the legacy ports
+    # legacy ports can be omitted if your application doesn't depend on them
+    listen-client-urls: "http://0.0.0.0:2379,http://0.0.0.0:4001"
+    listen-peer-urls: "http://$private_ipv4:2380,http://$private_ipv4:7001"
