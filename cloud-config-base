@@ -1,0 +1,6 @@
+#cloud-config
+
+# include one or more SSH public keys
+ssh_authorized_keys:
+  - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDaCVjq2L9h92YxTpyMDolJMEthtUUkqxpPt+EzRw1cZDMIDrHbyG5GGa0bvlHyVbFNAuWZReky9hZJUcmeRENZO7Jhdppa16WysQ3dlAZav/0+NMqFBHg5pIf2TiJzxNSUX1O0EyTwYMQ8FS88feXFBEqeZBkZRNXTk4FuwtgNbjqNCPbyZdWvB63YVuBQ2y9btpYlOAxr0a9CfzfyUlJkijQq4+KEmOBA+D4QUjPVGw3Q8ls8DXL7ftQyZfRcfAddubKwSd0Uyzn0uWt6JChsrBE5vi0Le9tHwguseLiDOd10ZWrSoPlprHQoBqriXl1jBQtTng/TDlNcvj4zPiWB giovibal@iMac-di-Ester.local
+  
